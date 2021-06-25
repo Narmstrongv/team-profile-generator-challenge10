@@ -1,0 +1,24 @@
+{
+  "name": "team-profile-generator-challenge10",
+  "version": "1.0.0",
+  "description": "The Team Profile Generator is a...",
+  "main": "index.js",
+  "dependencies": {
+    "inquirer": "^8.1.1",
+    "jest": "^27.0.5"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Narmstrongv/team-profile-generator-challenge10.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Narmstrongv/team-profile-generator-challenge10/issues"
+  },
+  "homepage": "https://github.com/Narmstrongv/team-profile-generator-challenge10#readme"
+}
