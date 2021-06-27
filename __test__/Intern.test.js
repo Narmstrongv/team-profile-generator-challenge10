@@ -1,11 +1,8 @@
-// const { TestWatcher } = require('jest');
-// const Employee = require('../lib/Intern');
-// console.log(Employee);
+const { TestWatcher } = require('jest');
+const Intern = require('../lib/Intern');
 
-// test('creates an employee object', () => {
-//     const employee = new Employee('Dave', '001', 'dave@dave.com');
+test('creates an Intern object', () => {
+    const intern = new Intern('789');
 
-//     expect(employee.name).toBe('Dave');
-//     expect(employee.id).toEqual(expect.any(String));
-//     expect(employee.email).toEqual(expect.any(String));
-// });
+    expect(intern.school).toEqual(expect.any(String));
+});
