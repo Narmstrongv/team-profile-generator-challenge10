@@ -1,25 +1,9 @@
 var inquirer = require('inquirer');
 
-
-
-
-// TODO
-// use a command line app that accepts user input for team (similar to Challenge 9?)
-// 
-
-
 //Big Picture
 //inquirer
 //4 classes - Employee, Manager, Engineer, Intern
 //jest - test
-
-//Class Example
-class Rectangle {
-    constructor(height, width) {
-      this.height = height;
-      this.width = width;
-    }
-  }
 
 inquirer
 .prompt([
@@ -41,7 +25,7 @@ inquirer
 
 
 
-var Person = new Employee( 'Newton', 'cat', 'jamie@jamie.com')
+var Person = new Employee( 'John', 'cat', 'jamie@jamie.com')
 // console.log(Person.getName());
 // console.log(Person.getId());
 // console.log(Person.getEmail());
