@@ -1,27 +1,25 @@
 var inquirer = require('inquirer');
 const fs = require('fs');
-const htmlGenerator = require('./src/html-template')
-
-const Manager = require("./lib/Manager");
-
-const teamArray = []
-//this holds team as you create them
 
 const generatePage = require('./src/html-template');
 
-const profileDataArgs = process.argv.slice(2);
-console.log(profileDataArgs);
+const Manager = require("./lib/Manager");
+//create const for other members
 
-const [name, github] = profileDataArgs;
-console.log(name, github);
+const teamArray = []
+//this holds team members as you create them
 
-const pageHTML = generatePage(name, github);
 
-fs.writeFile('./dist/index.html', pageHTML, err => {
-  if (err) throw err;
 
-  console.log('Index.html created!');
-});
+// const profileDataArgs = process.argv.slice(2);
+// console.log(profileDataArgs);
+
+// const [name, github] = profileDataArgs;
+// console.log(name, github);
+
+//const pageHTML = generatePage(name, github);
+
+
 
 
 
@@ -62,6 +60,14 @@ inquirer
     },
 
     // {
+    //   type: "input",
+    //   name: "id",
+    //   message: "What is your ID?",
+    // },
+
+    
+
+    // {
     //   type: "list",
     //   name: "jobLiking",
     //   message: "Do you like your job?",
@@ -73,17 +79,19 @@ inquirer
   ])
   .then((answers) => {
     // Use user feedback for... whatever!!
-    console.log(answers);
+    //console.log(answers);
     //console.log(answers.name);
-    var manager = new Manager(answers.name, answers.id, answers.email, answers.officeNumber)
-    console.log(manager);
-    teamArray.push(manager);
-    console.log("teamArray", teamArray);
+    //this is an instance of the inputted answers
+    var managerInst = new Manager(answers.name, answers.id, answers.email, answers.officeNumber)
+    //console.log(managerInst);
+
+    teamArray.push(managerInst);
+    //console.log("teamArray", teamArray);
     //doing this will help you understand/remember what the console logs do
 
     
   }).then(() => {
-    var templateAns = htmlGenerator(teamArray);
+    var templateAns = generatePage(teamArray);
     console.log(templateAns);
   })
 
@@ -107,3 +115,10 @@ inquirer
 // console.log(Person.getId());
 // console.log(Person.getEmail());
 //console.log(Person.getRole());
+
+//creates html page
+// fs.writeFile('./dist/index.html', generatePage, err => {
+//   if (err) throw err;
+
+//   console.log('Index.html created!');
+// });

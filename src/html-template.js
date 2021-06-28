@@ -1,4 +1,3 @@
-//you want to put placeholder vars in card boxes in file, and next to exports once set up
 module.exports = (teamArray) => {
   console.log( "Array of all team members", teamArray);
 }
